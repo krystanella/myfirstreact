@@ -3,6 +3,8 @@ import './App.css';
 import Greet from './Greet';
 import Message from './Message';
 import Button from './Button';
+import Hello from './components/Hello';
+import Employee from './components/Employee';
  
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload._krystanellaaaa
         </p>
+        <p>{Hello()} </p>
+        <Employee/>
         <Greet></Greet>
         <Message/>
         <Greet name= "Harley" heroname ="Harley"/>

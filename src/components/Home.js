@@ -16,11 +16,11 @@ function Home() {
         <p>
           Edit <code>src/App.js</code> and save to reload._krystanellaaaa
         </p>
-        <p>{Hello()} </p>
+        <p>{Hello ()} </p>
         <Employee/>
         <Greet></Greet>
         <Message/>
-        <Greet name= "Harley" heroname ="Harley"/>
+        <Greet name= "Harley " heroname ="Harley"/>
         <Button/>  
         <a
           className="App-link"

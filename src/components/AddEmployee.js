@@ -2,11 +2,13 @@ import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router";
 import employeeService from "../services/employeeService";
 
+
 const AddEmployee = () => {
 
     const [name, setName] = useState("");
     const [location, setLocation] = useState("");
     const [department, setDepartment] = useState("");
+    const [error, setError] = useState(""); 
     const navigate = useNavigate();
     const { employeeId } = useParams();
 
@@ -26,13 +28,15 @@ const AddEmployee = () => {
                         error => {
                             console.error("error!")
                         }
-                    )
+                    );
             }
 
-        }, [])
+        }, []);
 
     const saveEmployee = (e) => {
         e.preventDefault();
+        if (name && location && department) {
+            setError('');
         if (employeeId) {
             const employee = { employeeId, name, location, department };
             employeeService.putEmployee(employee)
@@ -47,7 +51,7 @@ const AddEmployee = () => {
                     error => {
                         console.error("something went wrong!")
                     }
-                )
+                );
         }
 
         else {
@@ -64,9 +68,14 @@ const AddEmployee = () => {
                     error => {
                         console.error("something went wrong!")
                     }
-                )
+                );
         }
     }
+    else {
+        console.error('All fields must be filled up');
+        setError('All fields must be filled up');
+    }
+}
     useEffect(
         () => {
             if (employeeId) {
@@ -103,6 +112,8 @@ const AddEmployee = () => {
                         type="text"
                         className="form-control"
                         id="nameField"
+                       
+                        value={name}
                         placeholder="Add employee name"
                         onChange={
                             (e) => {
@@ -117,6 +128,7 @@ const AddEmployee = () => {
                         type="text"
                         className="form-control"
                         id="locationField"
+                        value={location}
                         placeholder="Add employee location"
                         onChange={
                             (e) => {
@@ -131,6 +143,7 @@ const AddEmployee = () => {
                         type="text"
                         className="form-control"
                         id="departmentField"
+                        value={department}
                         placeholder="Add employee department"
                         onChange={
                             (e) => {
@@ -140,6 +153,8 @@ const AddEmployee = () => {
                     />
                 </div>
                 <button type="submit" className="btn btn-primary" onClick={(e) => saveEmployee(e)}>Save</button>
+
+<p id="error">{error && <p className="error">{error}</p>}</p>
             </form>
         </div>
     )

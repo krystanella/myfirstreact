@@ -1,5 +1,13 @@
+
 .App {
+  background-image: url(https://media1.giphy.com/media/DekUbdtQVWPO2Bki3S/giphy.gif?cid=ecf05e4717rhaslco7qmqjxgy3wgnpz9gksf1fka2pl2q5vt&rid=giphy.gif&ct=g);
+  background-origin: content-box;
+  background-repeat: no-repeat;
+  background-size: cover;
   text-align: center;
+  font-size: calc(10px + 2vmin);
+  font-weight: 500;
+  color: white;
 }
 
 .App-logo {
@@ -13,16 +21,6 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
 .App-link {
   color: #61dafb;

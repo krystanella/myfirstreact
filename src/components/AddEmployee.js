@@ -28,10 +28,10 @@ const AddEmployee = () => {
                         error => {
                             console.error("error!")
                         }
-                    );
+                    )
             }
 
-        }, []);
+        }, [])
 
     const saveEmployee = (e) => {
         e.preventDefault();
@@ -51,7 +51,7 @@ const AddEmployee = () => {
                     error => {
                         console.error("something went wrong!")
                     }
-                );
+                )
         }
 
         else {

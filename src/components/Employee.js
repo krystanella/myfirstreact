@@ -63,7 +63,8 @@ employees.map(
     <td>{employee.location}</td>
     <td>
         <div class="d-grid gap-2 d-md-flex">
-       <Link className="btn btn-primary" to={`/edit/${employee.employeeId}`}>Update</Link>
+      
+       <Link className="btn btn-primary" to={`/myfirstreact/employees/edit/${employee.employeeId}`}>Update</Link>
        <button className="btn btn-danger" onClick={() =>deleteEmployee(employee.employeeId)} >Delete</button>
         </div>
     </td>
